@@ -1,12 +1,11 @@
 #include <gb/gb.h>
-#include <studio.h>
-#include "isrp_tileset.c"
-#include "isrp_tilemap.c"
-#include "prog_tilemap.c"
-#include "prog_tileset.c"
-#include "fbr_tileset.c"
-#include "fbr_tilemap.h"
-
+#include <stdio.h>
+#include "isrpsplash_data.c"
+#include "isrpsplash_map.c"
+#include "progsplash_data.c"
+#include "progsplash_map.c"
+#include "fbrsplash_data.c"
+#include "fbrsplash_map.c"
 UINT8 i;
 
 void performantdelay(UINT8 numloops){
@@ -34,23 +33,28 @@ void fadeout(){
 		}
 		performantdelay(10);
 	}
+ performantdelay(10);
 }
 
 void fadein(){
-	for(i=0;i<3;i++){
+	for(i=0;i<4;i++){
 		switch(i){
 			case 0:
-				BGP_REG = 0xFE;
+				BGP_REG = 0xFF;
 				break;
 			case 1:
-				BGP_REG = 0xF9;
+				BGP_REG = 0xFE;
 				break;
 			case 2:
+				BGP_REG = 0xF9;
+				break;
+            case 3:
 				BGP_REG = 0xE4;
-				break;					
+				break;							
 		}
 		performantdelay(10);
 	}
+ performantdelay(10);
 }
 
 void main(){
@@ -59,29 +63,47 @@ void main(){
 
          fadeout();
 
-     set_bkg_data(0, 114, isrp_tileset);
-     set_bkg_data(0, 0, 20, 18, isrp_tilemap);
+     set_bkg_data(0, 114, isrpsplash_data);
+     wait_vbl_done();
+     set_bkg_tiles(0, 0, 20, 18, isrpsplash_map);
+     wait_vbl_done();
+
+     SHOW_BKG;
+     DISPLAY_ON;
 
          fadein();
+         wait_vbl_done();
 
-    performantdelay(10);
+    performantdelay(100);
 
          fadeout();
     
-     set_bkg_data(0, 114, prog_tileset);
-     set_bkg_data(0, 0, 20, 18, prog_tilemap);
+    performantdelay(100);
+
+     set_bkg_data(0, 205, progsplash_data);
+     set_bkg_tiles(0, 0, 20, 18, progsplash_map);
+     wait_vbl_done();
 
          fadein();
 
-    performantdelay(10);
+    performantdelay(100);
 
          fadeout();
+
+    performantdelay(40);
     
-     set_bkg_data(0, 114, fbr_tileset);
-     set_bkg_data(0, 0, 20, 18, fbr_tilemap);
+     set_bkg_data(0, 114, fbrsplash_data);
+     set_bkg_tiles(0, 0, 20, 18, fbrsplash_map);
+     wait_vbl_done();
 
          fadein();
 
+    performantdelay(100);
+
+    
+        fadeout();    
+    
+    wait_vbl_done();
 
 
 }

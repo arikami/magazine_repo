@@ -1,0 +1,40 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy Z80-like CPU), page 1.
+Hexadecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.=  2710 L   |     .__.ABS.=  0000 G   |     .__.CPU.=  0000 L
+    .__.H$L.=  0000 L   |     _BGP_REG   **** GX  |     _LCDC_RE   **** GX
+    _OBP0_RE   **** GX  |     _OBP1_RE   **** GX  |     _SCX_REG   **** GX
+    _SCY_REG   **** GX  |     _WX_REG    **** GX  |     _WY_REG    **** GX
+  0 _animate   022B GR  |   1 _bkg_dat   0410 GR  |   1 _bkg_til   06E0 GR
+  1 _bposx     0A21 GR  |   1 _bposy     0A23 GR  |   1 _bspx      0A25 GR
+  1 _bspy      0A27 GR  |   1 _color     0A1F GR  |     _disable   **** GX
+    _display   **** GX  |   0 _door      01A7 GR  |   1 _door1_t   07CE GR
+  1 _door2_t   085E GR  |   1 _door3_t   08E2 GR  |   1 _door4_t   0966 GR
+  1 _doorpos   0A1E GR  |   1 _doorsta   0A1D GR  |   1 _earth_d   0040 GR
+  1 _earth_t   0720 GR  |     _enable_   **** GX  |   0 _fade      0000 GR
+  1 _film      09EA GR  |   1 _frame_d   0200 GR  |   1 _frame_t   072E GR
+    _joypad    **** GX  |   0 _main      02A4 GR  |     _move_sp   **** GX
+  0 _place_s   0278 GR  |   0 _scroll    0051 GR  |     _set_bkg   **** GX
+    _set_bkg   **** GX  |     _set_spr   **** GX  |     _set_spr   **** GX
+    _set_spr   **** GX  |     _set_win   **** GX  |     _set_win   **** GX
+  1 _sframe    0A20 GR  |   1 _sposx     0A31 GR  |   1 _sposy     0A33 GR
+  1 _sspx      0A35 GR  |   1 _sspy      0A37 GR  |   1 _std_dat   0000 GR
+  0 _tile_sp   0243 GR  |   1 _time      0A1C GR  |     _wait_vb   **** GX
+  1 _wposx     0A29 GR  |   1 _wposy     0A2B GR  |   1 _wspx      0A2D GR
+  1 _wspy      0A2F GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (GameBoy Z80-like CPU), page 2.
+Hexadecimal [16-Bits]
+
+Area Table
+
+   0 _CODE      size  5D2   flags    0
+   1 _DATA      size  A39   flags    0
+   2 _DABS      size    0   flags    8
+   3 _HOME      size    0   flags    0
+   4 _GSINIT    size 325A   flags    0
+   5 _GSFINAL   size    0   flags    0
+   6 _CABS      size    0   flags    8
+
